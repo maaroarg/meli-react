@@ -13,10 +13,10 @@ class MeliReact extends React.Component {
     }
   }
 
-  //Solo para pruebas
+  //Solo para pruebas? estas seguro?
   componentDidMount(){
     this.setState({
-      query:'xbox'
+      query:'esta mierda no funciona'
     });
     this.getProducts('ps3');
   }
