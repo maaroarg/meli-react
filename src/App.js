@@ -4,52 +4,59 @@ import ProductCluster from './components/ProductCluster';
 import { Container } from 'bloomer';
 
 class MeliReact extends React.Component {
-  constructor(props){
-    super(props);
+    constructor(props) {
+            super(props);
 
-    this.state = {
-      products: [],
-      query: ''
-    }
-  }
-
-  //Solo para pruebas
-  componentDidMount(){
-    this.setState({
-      query:'xbox'
-    });
-    this.getProducts('ps3');
-  }
-
-  //Fetch a MELI
-  getProducts(value=this.state.query){
-    fetch('https://api.mercadolibre.com/sites/MLA/search?q=' + value)
-      .then((response)=>{
-        if(response.status!==200){
-          console.error("Problemas con la API. Status code:" + response.status);
-          return false;
+            this.state = {
+                products: [],
+                query: ''
+            }
         }
+        // muchas mas pruebas
+        //Solo para pruebas
+    componentDidMount() {
+        this.setState({
+            query: 'xbox'
+        });
+        this.getProducts('ps3');
+    }
 
-        response.json().then(data=>{
-            this.setState({products: data.results})
-          })
-    });
-  }
+    //Fetch a MELI
+    getProducts(value = this.state.query) {
+        fetch('https://api.mercadolibre.com/sites/MLA/search?q=' + value)
+            .then((response) => {
+                if (response.status !== 200) {
+                    console.error("Problemas con la API. Status code:" + response.status);
+                    return false;
+                }
 
-  setQuery(value){
-    this.setState({
-      query: value
-    });
-  }
+                response.json().then(data => {
+                    this.setState({ products: data.results })
+                })
+            });
+    }
 
-  render() {
-    return (
-      <Container isFluid style={{ marginTop: 10 }}>
-        <SearchBox setInputValue={(term) => this.setQuery(term)} onSearchButtonClick={() => this.getProducts()}/>
-        <ProductCluster products={this.state.products}/>
-      </Container>
-    )
-  }
+    setQuery(value) {
+        this.setState({
+            query: value
+        });
+    }
+
+    render() {
+        return ( <
+            Container isFluid style = {
+                { marginTop: 10 } } >
+            <
+            SearchBox setInputValue = {
+                (term) => this.setQuery(term) }
+            onSearchButtonClick = {
+                () => this.getProducts() }
+            /> <
+            ProductCluster products = { this.state.products }
+            /> <
+            /Container>
+        )
+    }
 }
 
 export default MeliReact;
