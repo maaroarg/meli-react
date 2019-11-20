@@ -45,6 +45,7 @@ class MeliReact extends React.Component {
   render() {
     return (
       <Container isFluid style={{ marginTop: 10 }}>
+        <p>Estoy cambiando el proyecto para romper las bolas</p>
         <SearchBox setInputValue={(term) => this.setQuery(term)} onSearchButtonClick={() => this.getProducts()}/>
         <ProductCluster products={this.state.products}/>
       </Container>
