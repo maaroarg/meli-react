@@ -35,7 +35,7 @@ class SearchBox extends React.Component {
             isColor='success'
             isOutlined
             onClick={event => this.handleClick(event.target.value)}>
-            Buscar en Meli
+            Click para buscar en Meli!
           </Button>
         </Control>
       </Field>

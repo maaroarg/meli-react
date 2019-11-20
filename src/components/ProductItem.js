@@ -15,7 +15,7 @@ class ProductItem extends React.Component {
           <div><strong>ARS {this.props.price}</strong> ({this.props.condition})</div>
         </Column>
         <Column isSize="1/2">
-          <Button href={this.props.link}>Detalle</Button>
+          <Button href={this.props.link}>Detalles!</Button>
         </Column>
       </Columns>
     )
