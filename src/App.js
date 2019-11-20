@@ -18,7 +18,7 @@ class MeliReact extends React.Component {
     this.setState({
       query:'xbox'
     });
-    this.getProducts('ps3');
+    this.getProducts('ps4');
   }
 
   //Fetch a MELI
