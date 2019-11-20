@@ -3,6 +3,7 @@ import SearchBox from './components/SearchBox';
 import ProductCluster from './components/ProductCluster';
 import { Container } from 'bloomer';
 
+//Buenas, buenas
 class MeliReact extends React.Component {
   constructor(props){
     super(props);
