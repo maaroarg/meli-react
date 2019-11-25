@@ -7,8 +7,9 @@ class ProductCluster extends React.Component {
     return (
       <div>
         {
-          this.props.products.map(item =>
+          this.props.products.map((item,index) =>
               <ProductItem
+                key={`prod-${index}`}
                 title = {item.title}
                 thumbnail = {item.thumbnail}
                 link = {item.permalink}
